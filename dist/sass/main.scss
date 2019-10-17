@@ -1,0 +1,373 @@
+$color-primary: #0367A6;
+$color-primary-dark: #010440;
+$color-secondary: #F28749;
+$color-tertiary: #D92555;
+$color-plain: #FFF;
+$color-plain-dark: #000;
+
+$primary-font-size: 1.5rem;
+$medium-font-size: 2rem;
+$large-font-size: 4rem;
+$xlarge-font-size: 8rem;
+$xxlarge-font-size: 10rem;
+
+$font-display:'Nanum Myeongjo', serif;
+$font-main:'Crimson Text', serif;
+
+$mq-xlarge: 72.5em; // 1160px
+$mq-large: 62.8em; // 1105px
+$mq-medium: 43.8em; // 700px
+$mq-small: 34.4em;
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: $font-main;
+}
+
+
+.container {
+    background-image: url('../img/default.jpeg');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    height: 100vh;
+    position: relative;
+}
+
+.header {
+    padding: .7rem 2.5rem;
+    background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .8));
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    grid-column-gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+
+    &__title {
+        font-size: 3rem;
+        font-family: $font-display;
+        color: $color-plain;
+    }
+}
+
+.searchbox {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        background-color: $color-plain;
+        font-family: $font-main;
+        font-size: $primary-font-size;
+        border: none;
+        padding: 0.5rem;
+        width: 80%;
+        transition: all .2s;
+
+        &:focus, &:hover {
+            outline: none;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        background-color: transparent;
+        border: none;
+        padding-left: .8rem;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: $color-plain;
+        transition: all .2s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+}
+
+.weather {
+    background-image: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .8));
+    color: $color-plain;
+    
+    width: 70%;
+    height: 70%;
+    padding: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: grid;
+    grid-template-rows: [header-start] 1fr [header-end temp-start] 1fr [temp-end desc-start] 1fr [desc-end];
+    grid-template-columns: [head-length] 1fr [head-finish content-start] 1fr [content-finish footer-start] 1fr [footer-end];
+    grid-column-gap: 5rem;
+    grid-row-gap: 2rem;
+
+    align-items: start;
+    justify-items: center;
+    
+    @media only screen and (max-width: $mq-xlarge) {
+        grid-column-gap: 0;
+    }
+
+    @media only screen and (max-width: $mq-large) {
+        grid-template-rows: [header-start] 1fr [header-end temp-start] 1fr [temp-end desc-start] 1fr [desc-end];
+        grid-template-columns: [head-length] 1fr [head-finish content-start] 1fr [content-finish];
+        align-items: center;
+        height: 80%;
+    }
+
+    @media only screen and (max-width: $mq-medium) {
+        grid-row-gap: 0;
+    }
+    
+    &__city {
+
+        grid-row: header-start/ header-end;
+        grid-column: head-length/ footer-end;
+
+        align-self: center;
+
+        @media only screen and (max-width: $mq-large) {
+            grid-row: header-start/ header-end;
+            grid-column: head-length/ content-finish;
+        }
+
+        &-title {
+
+            @media only screen and (max-width: $mq-large) {
+                font-size: 6rem;
+            }
+
+            font-family: $font-display;
+            font-size: $xlarge-font-size;
+        }
+
+        &-date {
+            color: $color-plain;
+            text-align: center;
+            font-size: $medium-font-size;
+        }
+
+        &-error {
+            font-family: $font-display;
+            font-size: $medium-font-size;
+            color: $color-primary;
+        }
+    }
+
+    &__main {
+
+        font-family: $font-display;
+
+        grid-row: temp-start / desc-end;
+        grid-column: head-length / head-finish;
+
+        @media only screen and (max-width: $mq-large) {
+            grid-row: temp-start / temp-end;
+        }
+
+        &-temps {
+
+            justify-content: center;
+
+            &--1 {
+            font-size: $xxlarge-font-size;
+
+            @media only screen and (max-width: $mq-large) {
+                font-size: $xlarge-font-size;
+            }
+            }
+
+            &--2 {
+                font-size: $medium-font-size;
+                text-align: right;
+            }
+        }
+
+        &-temp { 
+
+            font-size: $medium-font-size;
+            margin-top: 3rem;
+
+            @media only screen and (max-width: $mq-medium) {
+                font-size: $primary-font-size;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+    
+            & > * {
+                display: flex;
+                align-items: center;
+                padding: 1rem;
+            }
+            
+            &--min {
+                color: $color-primary;
+
+                &--1 {
+                    fill: $color-primary;
+                    height: 2.5rem;
+                    width: 2rem;
+                }
+            }
+    
+            &--max {
+                color: $color-tertiary;
+
+                &--2 {
+                    fill: $color-tertiary;
+                    height: 2.5rem;
+                    width: 2rem;
+                }
+            }
+        }
+    }
+
+    &__desc {
+
+        grid-row: temp-start / desc-end;
+        grid-column: content-start / span 1;
+
+        @media only screen and (max-width: $mq-large) {
+           grid-row: temp-start / temp-end;
+           grid-column: content-start / content-end;
+        }
+
+
+        i {
+           font-size: 25rem;
+           line-height: 0.9;
+        }
+
+        &-main {
+            font-size: $large-font-size;
+            text-align: center;
+            color: $color-secondary;
+
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    &__condition {
+        font-size: $medium-font-size;
+        text-align: center;
+
+        grid-row: temp-start / desc-end;
+        grid-column: footer-start / footer-end;
+
+        @media only screen and (max-width: $mq-large) {
+            grid-row: desc-start / desc-end;
+            grid-column: head-length / span 1;
+        }
+
+        @media only screen and (max-width: $mq-medium) {
+            font-size: $primary-font-size;
+        }
+
+        &-description {
+            color: $color-secondary;
+            
+            &::first-letter {
+                text-transform: uppercase;
+            }
+        }
+
+        &-humidity {
+            color: $color-plain;
+        }
+
+        &-pressure {
+            color: $color-plain;
+        }
+
+        &-wind {
+            color: $color-plain;
+        }
+    }
+
+    &__set {
+
+        font-family: $font-display;
+        font-size: $medium-font-size;
+
+        grid-row: desc-start / desc-end;
+        grid-column: footer-start / footer-end;
+
+        @media only screen and (max-width: $mq-large) {
+            grid-row: desc-start / desc-end;
+            grid-column: content-start / content-finish;
+        }
+
+        @media only screen and (max-width: $mq-medium) {
+            font-size: $primary-font-size;
+        }
+
+        display: flex;
+        align-items: center;
+
+        & > * {
+
+            @media only screen and (max-width: $mq-small) {
+                display: block;
+                float: left;
+            }
+
+            display: flex;
+            padding: 1rem;
+            align-items: center;
+        }
+
+        &-icon-1 {
+
+            @media only screen and (max-width: $mq-medium) {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            fill: $color-tertiary;
+            height: 5rem;
+            width: 5rem;
+        }
+
+        &-icon-2 {
+
+            @media only screen and (max-width: $mq-medium) {
+                height: 3rem;
+                width: 3rem;
+            }
+
+            fill: $color-primary;
+            height: 5rem;
+            width: 5rem;
+        }
+    }
+} 
+
+@media only screen and (max-width: $mq-large) {
+            
+    .weather__desc i {
+        font-size: 15rem;
+    }
+}

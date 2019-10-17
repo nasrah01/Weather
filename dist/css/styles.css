@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: "Crimson Text", serif; }
+
+.container {
+  background-image: url("../img/default.jpeg");
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative; }
+
+.header {
+  padding: .7rem 2.5rem;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8));
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-column-gap: 1.5rem;
+  align-items: center;
+  justify-content: center; }
+  .header__title {
+    font-size: 3rem;
+    font-family: "Nanum Myeongjo", serif;
+    color: #FFF; }
+
+.searchbox {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .searchbox__input {
+    background-color: #FFF;
+    font-family: "Crimson Text", serif;
+    font-size: 1.5rem;
+    border: none;
+    padding: 0.5rem;
+    width: 80%;
+    transition: all .2s; }
+    .searchbox__input:focus, .searchbox__input:hover {
+      outline: none;
+      width: 100%; }
+  .searchbox__button {
+    background-color: transparent;
+    border: none;
+    padding-left: .8rem; }
+    .searchbox__button:focus {
+      outline: none; }
+  .searchbox__icon {
+    height: 2rem;
+    width: 2rem;
+    fill: #FFF;
+    transition: all .2s; }
+    .searchbox__icon:hover {
+      transform: scale(1.2); }
+
+.weather {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8));
+  color: #FFF;
+  width: 70%;
+  height: 70%;
+  padding: 1rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-rows: [header-start] 1fr [header-end temp-start] 1fr [temp-end desc-start] 1fr [desc-end];
+  grid-template-columns: [head-length] 1fr [head-finish content-start] 1fr [content-finish footer-start] 1fr [footer-end];
+  grid-column-gap: 5rem;
+  grid-row-gap: 2rem;
+  align-items: start;
+  justify-items: center; }
+  @media only screen and (max-width: 72.5em) {
+    .weather {
+      grid-column-gap: 0; } }
+  @media only screen and (max-width: 62.8em) {
+    .weather {
+      grid-template-rows: [header-start] 1fr [header-end temp-start] 1fr [temp-end desc-start] 1fr [desc-end];
+      grid-template-columns: [head-length] 1fr [head-finish content-start] 1fr [content-finish];
+      align-items: center;
+      height: 80%; } }
+  @media only screen and (max-width: 43.8em) {
+    .weather {
+      grid-row-gap: 0; } }
+  .weather__city {
+    grid-row: header-start/ header-end;
+    grid-column: head-length/ footer-end;
+    align-self: center; }
+    @media only screen and (max-width: 62.8em) {
+      .weather__city {
+        grid-row: header-start/ header-end;
+        grid-column: head-length/ content-finish; } }
+    .weather__city-title {
+      font-family: "Nanum Myeongjo", serif;
+      font-size: 8rem; }
+      @media only screen and (max-width: 62.8em) {
+        .weather__city-title {
+          font-size: 6rem; } }
+    .weather__city-date {
+      color: #FFF;
+      text-align: center;
+      font-size: 2rem; }
+    .weather__city-error {
+      font-family: "Nanum Myeongjo", serif;
+      font-size: 2rem;
+      color: #0367A6; }
+  .weather__main {
+    font-family: "Nanum Myeongjo", serif;
+    grid-row: temp-start / desc-end;
+    grid-column: head-length / head-finish; }
+    @media only screen and (max-width: 62.8em) {
+      .weather__main {
+        grid-row: temp-start / temp-end; } }
+    .weather__main-temps {
+      justify-content: center; }
+      .weather__main-temps--1 {
+        font-size: 10rem; }
+        @media only screen and (max-width: 62.8em) {
+          .weather__main-temps--1 {
+            font-size: 8rem; } }
+      .weather__main-temps--2 {
+        font-size: 2rem;
+        text-align: right; }
+    .weather__main-temp {
+      font-size: 2rem;
+      margin-top: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      @media only screen and (max-width: 43.8em) {
+        .weather__main-temp {
+          font-size: 1.5rem; } }
+      .weather__main-temp > * {
+        display: flex;
+        align-items: center;
+        padding: 1rem; }
+      .weather__main-temp--min {
+        color: #0367A6; }
+        .weather__main-temp--min--1 {
+          fill: #0367A6;
+          height: 2.5rem;
+          width: 2rem; }
+      .weather__main-temp--max {
+        color: #D92555; }
+        .weather__main-temp--max--2 {
+          fill: #D92555;
+          height: 2.5rem;
+          width: 2rem; }
+  .weather__desc {
+    grid-row: temp-start / desc-end;
+    grid-column: content-start / span 1; }
+    @media only screen and (max-width: 62.8em) {
+      .weather__desc {
+        grid-row: temp-start / temp-end;
+        grid-column: content-start / content-end; } }
+    .weather__desc i {
+      font-size: 25rem;
+      line-height: 0.9; }
+    .weather__desc-main {
+      font-size: 4rem;
+      text-align: center;
+      color: #F28749; }
+      .weather__desc-main::first-letter {
+        text-transform: uppercase; }
+  .weather__condition {
+    font-size: 2rem;
+    text-align: center;
+    grid-row: temp-start / desc-end;
+    grid-column: footer-start / footer-end; }
+    @media only screen and (max-width: 62.8em) {
+      .weather__condition {
+        grid-row: desc-start / desc-end;
+        grid-column: head-length / span 1; } }
+    @media only screen and (max-width: 43.8em) {
+      .weather__condition {
+        font-size: 1.5rem; } }
+    .weather__condition-description {
+      color: #F28749; }
+      .weather__condition-description::first-letter {
+        text-transform: uppercase; }
+    .weather__condition-humidity {
+      color: #FFF; }
+    .weather__condition-pressure {
+      color: #FFF; }
+    .weather__condition-wind {
+      color: #FFF; }
+  .weather__set {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 2rem;
+    grid-row: desc-start / desc-end;
+    grid-column: footer-start / footer-end;
+    display: flex;
+    align-items: center; }
+    @media only screen and (max-width: 62.8em) {
+      .weather__set {
+        grid-row: desc-start / desc-end;
+        grid-column: content-start / content-finish; } }
+    @media only screen and (max-width: 43.8em) {
+      .weather__set {
+        font-size: 1.5rem; } }
+    .weather__set > * {
+      display: flex;
+      padding: 1rem;
+      align-items: center; }
+      @media only screen and (max-width: 34.4em) {
+        .weather__set > * {
+          display: block;
+          float: left; } }
+    .weather__set-icon-1 {
+      fill: #D92555;
+      height: 5rem;
+      width: 5rem; }
+      @media only screen and (max-width: 43.8em) {
+        .weather__set-icon-1 {
+          height: 3rem;
+          width: 3rem; } }
+    .weather__set-icon-2 {
+      fill: #0367A6;
+      height: 5rem;
+      width: 5rem; }
+      @media only screen and (max-width: 43.8em) {
+        .weather__set-icon-2 {
+          height: 3rem;
+          width: 3rem; } }
+
+@media only screen and (max-width: 62.8em) {
+  .weather__desc i {
+    font-size: 15rem; } }
