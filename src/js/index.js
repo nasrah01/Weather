@@ -98,6 +98,7 @@ const searchController = async () => {
             searchView.renderWeather(state.search.res);
             searchView.rendertemp(state.search.temp);
             searchView.renderMainTemp(state.search.temp);
+            searchView.setRise(state.search.sun);
 
             // render weather conditions
             searchView.conditions(state.search.res);

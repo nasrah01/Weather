@@ -38,13 +38,13 @@ export const rendertemp = temperature => {
     const degree = `
     <div class="weather__main-temp--min">
         <svg class="weather__main-temp--min--1">
-            <use xlink:href="img/sprite.svg#icon-arrow-long-down"></use>
+            <use xlink:href="assets/sprite.svg#icon-arrow-long-down"></use>
         </svg> 
         <p>${roundTemp(temperature.temp_min)}&#8451;</p>
     </div>
     <div class="weather__main-temp--max"> 
         <svg class="weather__main-temp--max--2">
-            <use xlink:href="img/sprite.svg#icon-arrow-long-up"></use>
+            <use xlink:href="assets/sprite.svg#icon-arrow-long-up"></use>
         </svg>
         <p>${roundTemp(temperature.temp_max)}&#8451;</p>
     </div>
@@ -78,13 +78,13 @@ export const setRise = time => {
     <div class="weather__set">
         <div class="weather__set-rise">
             <svg class="weather__set-icon-1">
-                <use xlink:href="img/sprite.svg#icon-sunrise"></use>
+                <use xlink:href="assets/sprite.svg#icon-sunrise"></use>
             </svg>
             <p>${convertHM(time.sunrise)}</p>
         </div>
         <div class="weather__set-fall">
             <svg class="weather__set-icon-2">
-                <use xlink:href="img/sprite.svg#icon-sunset"></use>
+                <use xlink:href="assets/sprite.svg#icon-sunset"></use>
             </svg>
             <p>${convertHM(time.sunset)}</p>
         </div>

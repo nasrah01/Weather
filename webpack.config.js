@@ -28,7 +28,21 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
-            } 
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                   // MiniCssExtractPlugin.loader,
+                    //for build mode will put css in the dist folder
+                  'style-loader',
+                  'css-loader',
+                  'sass-loader',
+                ],
+              },
+            {
+                test: /\.html$/,
+                use: ["html-loader"]
+              }
         ]
     }
 };

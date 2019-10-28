@@ -8,68 +8,68 @@ export const timeOfDay = (sun) => {
     
     if(str[2] === 'd') {
         if (`${sun.main}` == 'Clear') {
-            selectors.container.style.backgroundImage = "url('../img/clear.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/clear.jpeg')";
         } else if(`${sun.main}` == 'Thunderstorm') {
-            selectors.container.style.backgroundImage = "url('../img/thunder.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/thunder.jpeg')";
         } else if(`${sun.main}` == 'Drizzle') {
-            selectors.container.style.backgroundImage = "url('../img/drizzle.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/drizzle.jpeg')";
         } else if(`${sun.main}` == 'Mist') {
-            selectors.container.style.backgroundImage = "url('../img/mist.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/mist.jpeg')";
         } else if(`${sun.main}` == 'Smoke') {
-            selectors.container.style.backgroundImage = "url('../img/mist.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/mist.jpeg')";
         } else if(`${sun.main}` == 'Rain') {
-            selectors.container.style.backgroundImage = "url('../img/rain.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/rain.jpeg')";
         } else if(`${sun.main}` == 'Haze') {
-            selectors.container.style.backgroundImage = "url('../img/haze.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/haze.jpeg')";
         } else if(`${sun.main}` == 'Dust') {
-            selectors.container.style.backgroundImage = "url('../img/haze.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/haze.jpeg')";
         } else if(`${sun.main}` == 'Fog') {
-            selectors.container.style.backgroundImage = "url('../img/mist.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/mist.jpeg')";
         } else if(`${sun.main}` == 'Sand') {
-            selectors.container.style.backgroundImage = "url('../img/sand.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/sand.jpeg')";
         } else if(`${sun.main}` == 'Ash') {
-            selectors.container.style.backgroundImage = "url('../img/sand.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/sand.jpeg')";
         } else if(`${sun.main}` == 'Squall') {
-            selectors.container.style.backgroundImage = "url('../img/squall.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/squall.jpeg')";
         } else if(`${sun.main}` == 'Tornado') {
-            selectors.container.style.backgroundImage = "url('../img/tornado.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/tornado.jpeg')";
         } else if(`${sun.main}` == 'Clouds') {
-            selectors.container.style.backgroundImage = "url('../img/clouds.jpg')";
+            selectors.container.style.backgroundImage = "url('assets/clouds.jpg')";
         } else {
-            selectors.container.style.backgroundImage = "url('../img/default.jpeg')";    
+            selectors.container.style.backgroundImage = "url('assets/default.jpeg')";    
         }
 
     } else if(str[2] === 'n') {
         if (`${sun.main}` == 'Clear') {
-            selectors.container.style.backgroundImage = "url('../img/clearnight.jpg')";
+            selectors.container.style.backgroundImage = "url('assets/clearnight.jpg')";
         } else if(`${sun.main}` == 'Thunderstorm') {
-            selectors.container.style.backgroundImage = "url('../img/thundernight.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/thundernight.jpeg')";
         } else if(`${sun.main}` == 'Drizzle') {
-            selectors.container.style.backgroundImage = "url('../img/drizzlenight.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/drizzlenight.jpg')";
         } else if(`${sun.main}` == 'Mist') {
-            selectors.container.style.backgroundImage = "url('../img/mistnight.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/mistnight.jpeg')";
         } else if(`${sun.main}` == 'Smoke') {
-            selectors.container.style.backgroundImage = "url('../img/mistnight.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/mistnight.jpeg')";
         } else if(`${sun.main}` == 'Rain') {
-            selectors.container.style.backgroundImage = "url('../img/rainnight.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/rainnight.jpeg')";
         } else if(`${sun.main}` == 'Haze') {
-            selectors.container.style.backgroundImage = "url('../img/haze.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/haze.jpeg')";
         } else if(`${sun.main}` == 'Dust') {
-            selectors.container.style.backgroundImage = "url('../img/haze.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/haze.jpeg')";
         } else if(`${sun.main}` == 'Fog') {
-            selectors.container.style.backgroundImage = "url('../img/mist.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/mist.jpeg')";
         } else if(`${sun.main}` == 'Sand') {
-            selectors.container.style.backgroundImage = "url('../img/sand.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/sand.jpeg')";
         } else if(`${sun.main}` == 'Ash') {
-            selectors.container.style.backgroundImage = "url('../img/sand.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/sand.jpeg')";
         } else if(`${sun.main}` == 'Squall') {
-            selectors.container.style.backgroundImage = "url('../img/squall.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/squall.jpeg')";
         } else if(`${sun.main}` == 'Tornado') {
-            selectors.container.style.backgroundImage = "url('../img/tornado.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/tornado.jpeg')";
         } else if(`${sun.main}` == 'Clouds') {
-            selectors.container.style.backgroundImage = "url('../img/cloudsnight.jpeg')";
+            selectors.container.style.backgroundImage = "url('assets/cloudsnight.jpeg')";
         } else {
-            selectors.container.style.backgroundImage = "url('../img/clearnight.jpg')";  
+            selectors.container.style.backgroundImage = "url('assets/clearnight.jpg')";  
         }
         
     } else {
